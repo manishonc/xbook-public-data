@@ -1,0 +1,252 @@
+ :root {
+    /* 60% - Primary/Background Colors */
+    --primary-bg: #f0f4f8;
+    --card-bg: #ffffff;
+    
+    /* 30% - Secondary Colors */
+    --secondary-color: #0891b2;
+    --secondary-light: #e2e8f0;
+    --secondary-dark: #334155;
+    
+    /* 10% - Accent Colors */
+    --accent-color: #0ea5e9;
+    --accent-light: #bae6fd;
+    --accent-dark: #0284c7;
+    
+    /* UI Elements */
+    --border-radius: 16px;
+    --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+    
+    /* Text Colors */
+    --text-dark: #0f172a;
+    --text-light: #ffffff;
+    --text-muted: #64748b;
+    
+    /* other */
+    
+    --highlight: #FF1493;
+    --note-box-bg: #fff3cd;
+}
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding-top: 60px;  /* Add this to create space after fixed header */
+        }
+           
+        
+        .container {
+            background-color: var(--card-bg); /* Use variable */
+            border-radius: 10px;
+            padding: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-box {
+            border: 3px solid  var(--accent-dark);;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: var(--card-bg);
+        }
+        
+        .content-header {
+            background:  var(--secondary-color);;
+            color: var(--text-light);
+            padding: 5px;
+            margin: -10px -10px 10px -10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .question-box  {
+            background-color: #f5f5f5;
+            padding: 1px 15px 15px 15px;
+            margin: 15px 0;
+            border-left: 4px solid #4CAF50;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .que {
+            color: #006400;
+            font-weight: bold;
+        }
+
+        .solution-box {
+            margin-left: 5px;
+            color: #444;
+            padding: 1px 10px 10px 10px;
+            border-radius: 10px;
+            background-color: #fff;
+            border-left: 2px solid #666;
+        }
+
+        .ans {
+            color: #8e44ad;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-weight: bold;
+            color: #2980b9;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        
+        ul {
+            list-style-type: none;
+            padding-left: 15px;
+        }
+        
+        ul li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        ul li:before {
+            content: "•";  /* can Change 🔹 emoji */
+            color: #4CAF50;
+            font-weight: bold;
+            position: absolute;
+            left: -15px;  /* Adjusted -20px for 2nd icon position */
+        }
+
+    ul ul { /* Style for nested lists */
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding-left: 15px;
+    }
+
+     ul ul li:before { /* Style for nested list bullets */
+        content: "-"; /* Use hyphen for nested lists */
+        color: var(--secondary-color); /* Use a different color for nested lists */
+     }
+        .highlight {
+            color: #c026d3; /* #FF1493  ,  #c026d3  */
+            font-weight: bold;
+        }
+        .note-box {
+            background-color: var(--accent-light); /* Use accent light color */
+            border: 1px solid var(--accent-color); /* Use accent color */
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            color: var(--text-dark); /* Ensure text readability */
+        }
+
+        .emoji {
+            margin-right: 5px;
+            vertical-align: middle; /* Align emojis better */
+        }
+        
+    	.diagram {
+  	        text-align: left;       
+	        margin: 20px 0;
+ 	        padding: 10px;            /* Use this <div class='diagram'> just before of <img src and don't forget to close div */
+ 	        background: #f8f8f8;
+ 	        border-radius: 5px;
+	    }
+
+    	.diagram img {
+   	        max-width: 100%;
+   	        height: auto;
+	    }    
+    /* New Quiz System Styles */
+    .quiz-container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 1px 15px 15px 15px;
+        margin: 15px 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border: 2px solid var(--accent-color); /* Use accent color */
+    }
+    
+    .question {
+        margin-bottom: 20px;
+    }
+    
+    .question h2 {
+        color: var(--secondary-dark); /* Use secondary dark color */
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .options {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .option {
+        margin: 5px 0;
+        padding: 10px;
+        background-color: var(--secondary-light); /* Use secondary light color */
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-align: left;
+        font-size: 1rem;
+        color: var(--text-dark); /* Ensure text color */
+        border: 1px solid transparent; /* Add transparent border for consistency */
+    }
+    
+    
+    .option.correct {
+        background-color: #d1fae5; /* Lighter green */
+        color: #080808;
+        border: 1px solid #4CAF50;  /* Darker green border */
+        font-weight: bold;
+    }
+    
+    .option.incorrect {
+        background-color: #f6cbd0;
+        color: #080808;
+        border: 1px solid #dc3545;  /* Keeping the red border but making it more visible */
+        font-weight: bold;
+    }
+    
+    /* Style for the correct answer when shown after incorrect selection */
+        .option.show-correct {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+            font-weight: bold;
+        }
+        
+        
+        .feedback {
+        margin-top: 10px;
+        font-weight: bold;
+        padding: 8px;
+        border-radius: 4px;
+        }
+        
+        .feedback.correct {
+            
+            color: #065f46;
+        }
+        
+        .feedback.incorrect {
+            
+            color: #991b1b;
+        }
